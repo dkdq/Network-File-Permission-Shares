@@ -84,7 +84,35 @@ win+r -> type \\dc -> accounting -> create file ->
 ### Section 5: Map a network personal drive in Active Directory
 [back to top](#top)
 
+Create a Personal folder in SHARES
 
+- Go to DC-1 -> Server Manager -> File and Storage Services -> Shares
+<img src="images/admap1.png">
+<img src="images/admap2.png">
+
+Assign permission to users
+
+- File explorer -> This PC -> Windows (C:) -> Shares -> right click Personal -> properties -> Security -> Advanced -> Remove 2 Users -> Add -> john_admin -> tick Modify and Write -> OK
+<img src="images/admap3.png">
+<img src="images/admap4.png">
+
+Create Personal Security Group and add member into group
+
+- Server Manager -> tools -> Active Directory Users and Computers -> mydomain.com -> Users -> right click blank space -> New -> Group ->    Group name -> type Personal -> OK -> right click Personal -> properties -> Members -> Add -> type baf.wes -> Check Names -> OK
+<img src="images/admap5.png">
+<img src="images/admap6.png">
+
+Add permission entry of Personal group in Personal folder
+
+- File explorer -> This PC -> Windows (C:) -> Shares -> right click Personal -> properties -> Security -> Advanced -> Add -> type personal -> Check Names -> tick Modify and Write -> OK -> right click Personal -> properties -> Sharing -> Share -> type personal -> Add -> Permission Level -> Read/Write -> Share
+<img src="images/admap7.png">
+<img src="images/admap8.png">
+
+Map a network drive in Active Directory
+
+- Server Manager -> tools -> Active Directory Users and Computers -> mydomain.com -> _EMPLOYEES -> right click baf.wes -> properties -> Profile -> Connect -> select a drive (Y:) -> To: -> type \\dc\\Personal\%username% -> OK
+<img src="images/admap9.png">
+<img src="images/admap10.png">
 
 ### Bonus Section: Install Windows Administritive Tools in Client
 [back to top](#top)
