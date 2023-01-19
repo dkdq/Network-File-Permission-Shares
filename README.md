@@ -60,7 +60,7 @@ Create "no-access" file and assign permission
 
 Create "ACCOUNTANTS" file in DC and Client, then assign permission and user
 
-- Go back DC-1 -> Server Manager -> Active Directory Users and Computers -> right click mydomain.com -> New -> Organisational Unit -> type _ACCOUNTING -> OK -> click _ACCOUNTING -> right click blank space -> New -> Group -> type ACCOUNTANTS -> go to Client-1 -> Windows (C:) -> right click accounting -> properties -> Sharing -> Share -> type accountants -> Add -> Permission Level -> Read/Write -> Share -> Close -> Back to DC-1 -> double click ACCOUNTANTS -> Members -> Add -> type baf.wes -> Check Names -> OK -> Apply -> OK
+- Go back DC-1 -> Server Manager -> ***Active Directory Users and Computers*** -> right click mydomain.com -> New -> ***Organisational Unit*** -> type _ACCOUNTING -> OK -> click _ACCOUNTING -> right click blank space -> New -> Group -> type ACCOUNTANTS -> go to Client-1 -> Windows (C:) -> right click accounting -> properties -> Sharing -> Share -> type accountants -> Add -> ***Permission Level*** -> Read/Write -> Share -> Close -> Back to DC-1 -> double click ACCOUNTANTS -> Members -> Add -> type baf.wes -> Check Names -> OK -> Apply -> OK
 <img src="images/accfolder.png">
 <img src="images/accgroup.png">
 <img src="images/accpermission.png">
@@ -92,25 +92,25 @@ Create a Personal folder in SHARES
 
 Assign permission to users
 
-- File explorer -> This PC -> Windows (C:) -> Shares -> right click Personal -> properties -> Security -> Advanced -> Remove 2 Users -> Add -> john_admin -> tick Modify and Write -> OK
+- File explorer -> This PC -> Windows (C:) -> Shares -> right click Personal -> properties -> Security -> Advanced -> ***Disable inheritance*** -> Convert inherited permission into explicit permissions on this object -> Remove Users twice -> Add -> john_admin -> tick Modify and Write -> OK
 <img src="images/admap3.png">
 <img src="images/admap4.png">
 
 Create Personal Security Group and add member into group
 
-- Server Manager -> tools -> Active Directory Users and Computers -> mydomain.com -> Users -> right click blank space -> New -> Group ->    Group name -> type Personal -> OK -> right click Personal -> properties -> Members -> Add -> type baf.wes -> Check Names -> OK
+- Server Manager -> tools -> ***Active Directory Users and Computers*** -> mydomain.com -> Users -> right click blank space -> New -> Group -> Group name -> type Personal -> OK -> right click Personal -> properties -> Members -> Add -> type baf.wes -> Check Names -> OK
 <img src="images/admap5.png">
 <img src="images/admap6.png">
 
 Add permission entry of Personal group in Personal folder
 
-- File explorer -> This PC -> Windows (C:) -> Shares -> right click Personal -> properties -> Security -> Advanced -> Add -> type personal -> Check Names -> tick Modify and Write -> OK -> right click Personal -> properties -> Sharing -> Share -> type personal -> Add -> Permission Level -> Read/Write -> Share
+- File explorer -> This PC -> Windows (C:) -> Shares -> right click Personal -> properties -> Security -> Advanced -> ***Disable inheritance*** -> Convert inherited permission into explicit permissions on this object -> Add -> type personal -> Check Names -> tick Modify and Write -> OK -> right click Personal -> properties -> Sharing -> Share -> type personal -> Add -> ***Permission Level*** -> Read/Write -> Share
 <img src="images/admap7.png">
 <img src="images/admap8.png">
 
 Map a network drive in Active Directory
 
-- Server Manager -> tools -> Active Directory Users and Computers -> mydomain.com -> _EMPLOYEES -> right click baf.wes -> properties -> Profile -> Connect -> select a drive (Y:) -> To: -> type \\dc\\Personal\%username% -> OK
+- Server Manager -> tools -> ***Active Directory Users and Computers*** -> mydomain.com -> _EMPLOYEES -> right click baf.wes -> properties -> Profile -> Connect -> select a drive (Y:) -> To: -> type \\dc\\Personal\%username% -> OK
 <img src="images/admap9.png">
 <img src="images/admap10.png">
 
