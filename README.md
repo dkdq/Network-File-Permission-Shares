@@ -125,4 +125,4 @@ Log in as john_admin in Client to perform activities (Active Directory Users and
 ## Credits
 [back to top](#top)
 
-- Josh Madakor [link](https://github.com/joshmadakor1)
+- [Josh Madakor](https://github.com/joshmadakor1)
